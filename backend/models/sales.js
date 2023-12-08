@@ -1,0 +1,36 @@
+//import mongoose package and assign it to an variable  to connect mongoDB
+const mongoose = require("mongoose");
+
+//declare a variable and initialize mongoose schema
+const saleSchema = new mongoose.Schema({
+  //attibutes
+  worker: {
+    type: String,
+    required: true,
+  },
+
+  date: {
+    type: Date,
+    required: true,
+  },
+  category: {
+    type: String,
+    required: false,
+  },
+
+  price: {
+    type: Number,
+    required: true,
+  },
+
+  quantity: {
+    type: Number,
+    required: true,
+  },
+});
+
+//export module
+
+//db name                   //db name
+const Sale = mongoose.model("Sales", saleSchema);
+module.exports = Sale;
